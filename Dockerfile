@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y sudo vim php5-cli php5-dev curl php-pea
 
 ADD set_sudo.sh /set_sudo.sh
 RUN chmod +x /*.sh
-CMD ["/run.sh"]
+CMD ["/set_sudo.sh"]
 
 EXPOSE 22
 
