@@ -1,4 +1,4 @@
-FROM jenkins
+FROM jenkins:latest
 
 MAINTAINER Michael C. <m@coulleret.pro>
 
