@@ -1,0 +1,13 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker info
+    - docker build -t 20uf/jenkins-ci-php-synology .
+
+test:
+  override:
+    - docker run -d -p 8080:8080 20uf/jenkins-ci-php-synology; sleep 10
+    - curl --retry 10 --retry-delay 5 -v http://localhost:8080
