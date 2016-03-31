@@ -5,7 +5,7 @@ services:
 
 install:
   - docker build -t 20uf/jenkins-ci-php-synology .
-  - docker run -d -p 127.0.0.1:8080:8080 --name jenkins-ci-php-synology jenkins-ci-php-synology
+  - docker run -d -p 127.0.0.1:8080:8080 --name jenkins-synology 20uf/jenkins-ci-php-synology
 
 script:
-  - docker ps | grep -q jenkins-ci-php-synology
+  - docker ps | grep -q jenkins-synology
