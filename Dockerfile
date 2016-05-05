@@ -1,4 +1,4 @@
-FROM jenkins:2.1
+FROM jenkins:2.0
 
 MAINTAINER Michael C. <m@coulleret.pro>
 
