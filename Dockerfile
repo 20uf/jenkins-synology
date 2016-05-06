@@ -3,10 +3,12 @@ FROM jenkins:2.0
 MAINTAINER Michael C. <m@coulleret.pro>
 
 USER root
-RUN apt-get update && apt-get install -y sudo vim php5-cli php5-dev curl php-pear ant php5-common wget lftp rsync -y --force-yes
-RUN apt-get install nodejs-legacy -y --force-yes
+RUN apt-get update && apt-get install -y sudo vim php5-cli php5-dev curl php-pear ant php5-common wget lftp rsync --force-yes
+RUN apt-get install -y rubygems build-essential --force-yes
+RUN apt-get install -y nodejs-legacy  --force-yes
 RUN curl -L --insecure https://www.npmjs.org/install.sh | bash
 RUN npm install -g bower
+RUN gem install capifony
 
 RUN usermod -a -G sudo jenkins
 RUN sed -i.bkp -e \
