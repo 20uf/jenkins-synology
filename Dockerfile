@@ -1,10 +1,16 @@
 FROM jenkins:2.0
 
-MAINTAINER Michael C. <m@coulleret.pro>
+MAINTAINER Michael COULLERET <michael@coulleret.pro>
 
 USER root
+
 RUN apt-get update && apt-get install -y sudo vim php5-cli php5-dev curl php-pear ant php5-common wget lftp rsync -y --force-yes
 RUN sudo apt-get install rubygems -y --force-yes
+RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo bash -
+RUN apt-get install nodejs -y --force-yes
+
+RUN npm install -g bower-installer
+
 RUN gem install capistrano-ext
 RUN gem install 'capistrano-strategy-copy-with-triggers'
 
