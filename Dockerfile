@@ -9,7 +9,7 @@ RUN sudo apt-get install rubygems -y --force-yes
 RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo bash -
 RUN apt-get install nodejs -y --force-yes
 
-RUN npm install -g bower-installer
+RUN npm install -g bower
 
 RUN gem install capistrano-ext
 RUN gem install 'capistrano-strategy-copy-with-triggers'
